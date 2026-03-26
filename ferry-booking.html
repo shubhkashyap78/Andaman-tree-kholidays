@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferry Booking - Andaman Treek Holidays</title>
+  <meta name="description" content="Book ferry tickets for Andaman Islands. Easy online booking with guaranteed safety and competitive pricing."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .booking-process{padding:60px 8vw;background:var(--card)}.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}.process-card{text-align:center;padding:30px;background:rgba(15,185,177,0.05);border-radius:16px;cursor:pointer;transition:all 0.3s}.process-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.process-card img{width:100%;max-width:300px;height:200px;object-fit:cover;border-radius:12px;margin-bottom:20px}.process-card h3{margin:16px 0;color:var(--accent)}.why-choose{padding:60px 8vw;background:var(--bg)}.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}.feature-card{padding:30px;background:var(--card);border-radius:16px;box-shadow:var(--shadow)}.feature-card i{font-size:40px;color:var(--accent);margin-bottom:16px}.faq-section{padding:60px 8vw;background:var(--card)}.faq-container{max-width:900px;margin:40px auto 0}@media (max-width:1100px){.process-steps,.features-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo1.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
+      <span>Andaman Treek Holidays</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="package.html#packages">Packages</a></li>
+      <li><a href="index.html#activities">Activities</a></li>
+      <li><a href="index.html#islands">Islands</a></li>
+      <li><a href="index.html#ferry">Ferry</a></li>
+      <li><a href="index.html#hotels">Hotels</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Customize Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero" style="padding:140px 8vw 60px">
+      <h1>Ferry Booking</h1>
+      <p style="margin:10px 0">Easy Ticket Booking Process</p>
+      <p style="color:rgba(255,255,255,0.8)">Simple steps to plan your island adventure</p>
+    </header>
+
+    <!-- Booking Process Section -->
+    <section class="booking-process">
+      <div class="section-header">
+        <p class="section-tag">How It Works</p>
+        <h2>Easy Ticket <span>Booking Process</span></h2>
+        <p class="section-sub">Simple steps to plan your island adventure</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-card" onclick="openModal('routeModal')">
+          <img src="images/choose your route.png" alt="Choose Your Route" loading="lazy" decoding="async"/>
+          <h3><i class="fas fa-route"></i> Choose Your Route</h3>
+          <p>Select your desired island destination from our comprehensive routes.</p>
+          <button class="btn-primary" style="margin-top:16px">View Routes</button>
+        </div>
+
+        <div class="process-card" onclick="openModal('passengerModal')">
+          <img src="images/passenger select.png" alt="Select Passengers" loading="lazy" decoding="async"/>
+          <h3><i class="fas fa-users"></i> Select Passengers</h3>
+          <p>Add the number of travelers in your group.</p>
+          <button class="btn-primary" style="margin-top:16px">Add Passengers</button>
+        </div>
+
+        <div class="process-card" onclick="openModal('bookingModal')">
+          <img src="images/book your ticket.png" alt="Book Your Tickets" loading="lazy" decoding="async"/>
+          <h3><i class="fas fa-ticket-alt"></i> Book Your Tickets</h3>
+          <p>Complete your booking with a few simple clicks.</p>
+          <button class="btn-primary" style="margin-top:16px">Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+      <div class="section-header">
+        <p class="section-tag">Why Choose Us</p>
+        <h2>Why Choose <span>Andaman Treek Holidays</span> for Ferry Booking</h2>
+        <p class="section-sub">Your Trusted Partner in Andaman Island Travel</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Guaranteed Safety</h3>
+          <p>We prioritize your safety with carefully vetted ferry services, modern vessels, and strict safety protocols.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-tags"></i>
+          <h3>Competitive Pricing</h3>
+          <p>Enjoy the best rates with our transparent pricing and exclusive deals on ferry bookings.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-headset"></i>
+          <h3>24/7 Customer Support</h3>
+          <p>Our dedicated support team is available round the clock to assist you with any queries or concerns.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>Comprehensive Route Coverage</h3>
+          <p>We offer an extensive network of ferry routes connecting all major Andaman Islands seamlessly.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-laptop"></i>
+          <h3>Easy Online Booking</h3>
+          <p>Simple, user-friendly online booking process with instant confirmation and mobile-friendly interface.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Eco-Friendly Travel</h3>
+          <p>We collaborate with environmentally conscious ferry operators to minimize ecological impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="section-header">
+        <p class="section-tag">Ask Anything</p>
+        <h2>FAQs About <span>Andaman Ferry Booking</span></h2>
+        <p class="section-sub">Can't find the answer you're looking for? Our customer support team is always ready to help you.</p>
+      </div>
+
+      <div class="faq-container">
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">How do I book a ferry ticket?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">Booking a ferry ticket is simple. Visit our booking page, select your route, choose your preferred date and time, and complete the payment process. You'll receive a confirmation email with your ticket details. You can also call us at 8900909900 or WhatsApp us for assistance.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">What is your cancellation policy?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">Cancellations made 24+ hours before departure receive 85% refund. Cancellations made 12-24 hours before departure receive 50% refund. Cancellations made less than 12 hours before departure receive 25% refund. Weather-related cancellations by the operator receive 100% refund. Contact us at 8900909900 for cancellation assistance.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">Are the ferries safe?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">Yes, all our ferry partners maintain the highest safety standards. All vessels are regularly inspected, equipped with life jackets for every passenger, first aid kits, and operated by experienced crew members. We only work with licensed and certified ferry operators who follow strict safety protocols.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">Are the ferries accessible for people with disabilities?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">Most modern ferries have wheelchair-accessible facilities including ramps, accessible washrooms, and designated seating areas. However, accessibility varies by vessel. Please inform us about your specific requirements when booking, and we'll ensure you're booked on a suitable ferry. Contact us at 8900909900 for detailed accessibility information.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">What is the baggage allowance?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">Each passenger is allowed up to 20kg of luggage. Excess baggage will be charged separately at approximately ₹50-100 per kg depending on the ferry operator. Hand luggage should be kept with you, while check-in luggage will be stored in the designated luggage area. Fragile items should be carried as hand luggage.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">What documents do I need for ferry travel?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">All passengers must carry valid government-issued photo ID proof (Aadhaar Card, Passport, Driving License, or Voter ID). Children should carry school ID or birth certificate. Your booking confirmation (printed or digital) is also required. Foreign nationals must carry their passport and valid visa.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">Can I reschedule my ferry booking?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">Yes, rescheduling is possible subject to seat availability and may incur additional charges. Rescheduling requests made 24+ hours before departure are usually accommodated with minimal charges. Contact our customer support at 8900909900 or email us at info@andamanbliss.com for rescheduling assistance.</p>
+        </details>
+
+        <details style="margin:16px 0;padding:20px;background:rgba(255,255,255,0.5);border-radius:12px;border-left:4px solid var(--accent)">
+          <summary style="cursor:pointer;font-weight:600;font-size:18px">What happens if the ferry is cancelled due to bad weather?</summary>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8">In case of weather-related cancellations by the ferry operator, you will receive a 100% refund or can reschedule to another date at no extra cost. We will notify you immediately via SMS and email if your ferry is cancelled. Our team will assist you in making alternative arrangements.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section style="padding:60px 8vw;background:linear-gradient(135deg,var(--accent),var(--accent-2));text-align:center;color:white">
+      <h2 style="font-size:36px;margin-bottom:16px">Ready to Book Your Ferry?</h2>
+      <p style="font-size:18px;margin-bottom:30px;opacity:0.9">Contact us now for instant booking and best prices</p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+        <a href="tel:8900909900" class="btn-primary" style="background:white;color:var(--accent);padding:16px 32px;font-size:18px"><i class="fas fa-phone-alt"></i> Call: 8900909900</a>
+        <a href="https://wa.me/918900909900?text=Hi,%20I%20want%20to%20book%20ferry%20tickets" class="btn-primary" style="background:#25D366;padding:16px 32px;font-size:18px"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <div id="routeModal" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:800px">
+      <button class="modal-close" onclick="closeModal('routeModal')">&times;</button>
+      <h2 style="margin-bottom:20px"><i class="fas fa-route"></i> Choose Your Route</h2>
+      <img src="images/Route Selection.png" alt="Route Selection" style="width:100%;border-radius:12px;margin-bottom:20px"/>
+      <p style="line-height:1.8;margin-bottom:20px">Select your desired island destination from our comprehensive routes. We cover all major ferry routes including Port Blair to Havelock, Port Blair to Neil Island, Havelock to Neil Island, and many more.</p>
+      <a href="index.html#ferry" class="btn-primary"><i class="fas fa-ship"></i> View All Ferry Routes</a>
+    </div>
+  </div>
+
+  <div id="passengerModal" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:800px">
+      <button class="modal-close" onclick="closeModal('passengerModal')">&times;</button>
+      <h2 style="margin-bottom:20px"><i class="fas fa-users"></i> Select Passengers</h2>
+      <img src="images/Select Passengers.png" alt="Select Passengers" style="width:100%;border-radius:12px;margin-bottom:20px"/>
+      <p style="line-height:1.8;margin-bottom:20px">Add the number of travelers in your group. You can book for individuals, families, or large groups. Special discounts available for group bookings of 15+ passengers.</p>
+      <a href="tel:8900909900" class="btn-primary"><i class="fas fa-phone-alt"></i> Call to Book</a>
+    </div>
+  </div>
+
+  <div id="bookingModal" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:800px">
+      <button class="modal-close" onclick="closeModal('bookingModal')">&times;</button>
+      <h2 style="margin-bottom:20px"><i class="fas fa-ticket-alt"></i> Book Your Tickets</h2>
+      <img src="images/Book Your Tickets.png" alt="Book Your Tickets" style="width:100%;border-radius:12px;margin-bottom:20px"/>
+      <p style="line-height:1.8;margin-bottom:20px">Complete your booking with a few simple clicks. Our secure payment gateway ensures safe transactions. You'll receive instant confirmation via email and SMS with your e-tickets.</p>
+      <a href="https://wa.me/918900909900?text=Hi,%20I%20want%20to%20book%20ferry%20tickets" class="btn-primary" style="background:#25D366"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h4>About Andaman Treek Holidays</h4>
+        <p>We deliver end-to-end Andaman vacation packages with matching hotels, ferries, tours and 24/7 customer support.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#ferry">Ferry Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: 8900909900, 9933202248</p>
+        <p>Email: info@andamanbliss.com</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Andaman Treek Holidays. All rights reserved.</div>
+  </footer>
+
+  <a href="https://wa.me/918900909900" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

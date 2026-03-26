@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andaman Treek Holidays - Packages</title>
+  <meta name="description" content="All packages with filters - Honeymoon, Best Seller, Adventure, LTC, Group, Student."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
+      <span>Andaman Treek Holidays</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="package.html#packages">Packages</a></li>
+      <li><a href="index.html#activities">Activities</a></li>
+      <li><a href="index.html#islands">Islands</a></li>
+      <li><a href="index.html#ferry">Ferry</a></li>
+      <li><a href="index.html#hotels">Hotels</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Customize Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="section-header">
+        <p class="section-tag">Welcome to Packages</p>
+        <h1>Explore the Best Andaman Holiday Packages</h1>
+        <p>Discover curated stays, adventures, and group tour plans with flexible pricing and duration. Choose from Honeymoon, Best Seller, Adventure, LTC, Group and Student packages across multiple day-night options.</p>
+      </div>
+    </header>
+
+    <section class="packages" id="packages">
+      <div class="section-header">
+        <p class="section-tag">Our Offerings</p>
+        <h2>Popular <span>Packages</span></h2>
+        <p class="section-sub">Handcrafted itineraries for every kind of traveller</p>
+      </div>
+      <div class="packages-layout">
+        <aside class="packages-filter" aria-label="Package Filters">
+        <div class="filter-group">
+          <h4>Filter by Price</h4>
+          <input type="range" id="priceRange" min="0" max="200000" step="5000" value="200000" aria-label="Maximum price" />
+          <div class="price-values"><span>₹0</span><span id="priceValue">₹2,00,000</span></div>
+        </div>
+        <div class="filter-group">
+          <h4>Tour Categories</h4>
+          <div class="filter-options">
+            <label><input type="checkbox" class="category-filter" value="Family" checked /> Family <span>(08)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Honeymoon" checked /> Honeymoon <span>(08)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Best Seller" checked /> Best Seller <span>(08)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Adventure" checked /> Adventure <span>(08)</span></label>
+            <label><input type="checkbox" class="category-filter" value="LTC" checked /> LTC <span>(08)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Group" checked /> Group <span>(08)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Student" checked /> Student <span>(08)</span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h4>Tour Duration</h4>
+          <div class="filter-options">
+            <label><input type="checkbox" class="duration-filter" value="3 Nights 4 Days" checked /> 3 Nights 4 Days</label>
+            <label><input type="checkbox" class="duration-filter" value="4 Nights 5 Days" checked /> 4 Nights 5 Days</label>
+            <label><input type="checkbox" class="duration-filter" value="5 Nights 6 Days" checked /> 5 Nights 6 Days</label>
+            <label><input type="checkbox" class="duration-filter" value="6 Nights 7 Days" checked /> 6 Nights 7 Days</label>
+            <label><input type="checkbox" class="duration-filter" value="7 Nights 8 Days" checked /> 7 Nights 8 Days</label>
+            <label><input type="checkbox" class="duration-filter" value="8 Nights 9 Days" checked /> 8 Nights 9 Days</label>
+            <label><input type="checkbox" class="duration-filter" value="9 Nights 10 Days" checked /> 9 Nights 10 Days</label>
+          </div>
+        </div>
+        <button type="button" id="clearFilters">Reset Filters</button>
+      </aside>
+      <div class="packages-main">
+        <div id="packagesCount" class="packages-count">Showing 0 packages</div>
+        <div class="packages-grid" id="packagesGrid"></div>
+      </div>
+    </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h4>About Andaman Treek Holidays</h4>
+        <p>We deliver end-to-end Andaman vacation packages with matching hotels, ferries, tours and 24/7 customer support.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="package.html#packages">Packages</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: +91 12345 67890</p>
+        <p>Email: support@andamantreek.com</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Andaman Treek Holidays. All rights reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+
+  <!-- POPUP MODAL -->
+  <div id="popupModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3>Quick Booking & Special Offer!</h3>
+      <p>Get 10% off on your next booking. Fill the form below or subscribe for deals.</p>
+      <form id="quickBookingForm">
+        <label for="activity">Select Activity</label>
+        <select id="activity">
+          <option value="kayaking">Kayaking</option>
+          <option value="scuba">Scuba Diving</option>
+          <option value="sea-walk">Sea Walk</option>
+          <option value="parasailing">Parasailing</option>
+          <option value="island-tours">Island Tours</option>
+          <option value="dinner-cruise">Dinner Cruise</option>
+        </select>
+        <label for="bookingDate">Date</label>
+        <input type="date" id="bookingDate" required>
+        <label for="adults">Adults</label>
+        <input type="number" id="adults" min="1" value="1" required>
+        <label for="children">Children</label>
+        <input type="number" id="children" min="0" value="0">
+        <button type="submit" class="btn-primary">Book Now</button>
+      </form>
+      <hr>
+      <p>Or subscribe to our newsletter:</p>
+      <input type="email" placeholder="Enter your email" id="popupEmail">
+      <button class="btn-secondary" onclick="subscribe()">Subscribe</button>
+    </div>
+  </div>
+</body>
+</html>

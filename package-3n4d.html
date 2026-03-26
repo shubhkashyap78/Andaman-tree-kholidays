@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3 Nights 4 Days Andaman Package - Andaman Treek Holidays</title>
+  <meta name="description" content="Book 3N/4D Andaman tour package starting from ₹15,000. Visit Port Blair and Havelock Island."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .package-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 30px;
+      padding: 40px 8vw;
+      align-items: start;
+    }
+    .package-main-content {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .sticky-booking-form {
+      position: sticky;
+      top: 100px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--accent);
+    }
+    .booking-form-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(16, 33, 44, 0.1);
+    }
+    .booking-form-content {
+      max-height: 600px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .booking-form-content.collapsed {
+      max-height: 0;
+    }
+    .package-options {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .package-option {
+      padding: 12px;
+      border: 2px solid rgba(16, 33, 44, 0.1);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .package-option:hover, .package-option.selected {
+      border-color: var(--accent);
+      background: rgba(15, 185, 177, 0.05);
+    }
+    .price-display {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 16px 0;
+    }
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 30px 0;
+    }
+    .trust-badge {
+      text-align: center;
+      padding: 16px;
+      background: rgba(15, 185, 177, 0.05);
+      border-radius: 12px;
+    }
+    .trust-badge i {
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .trust-badge h4 {
+      font-size: 20px;
+      margin: 8px 0 4px;
+    }
+    .trust-badge p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .itinerary-day {
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent);
+    }
+    .itinerary-day h4 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .highlights-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .highlights-list li {
+      padding-left: 24px;
+      position: relative;
+    }
+    .highlights-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    @media (max-width: 1100px) {
+      .package-detail-layout {
+        grid-template-columns: 1fr;
+      }
+      .sticky-booking-form {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
+      <span>Andaman Treek Holidays</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="package.html#packages">Packages</a></li>
+      <li><a href="index.html#activities">Activities</a></li>
+      <li><a href="index.html#islands">Islands</a></li>
+      <li><a href="index.html#ferry">Ferry</a></li>
+      <li><a href="index.html#hotels">Hotels</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Customize Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero" style="padding: 140px 8vw 60px;">
+      <h1>3 Nights 4 Days Standard Tour Package</h1>
+      <p style="margin: 10px 0;">• 1N Port Blair • 1N Havelock • 1N Port Blair</p>
+      <p style="color: rgba(255,255,255,0.8);"><i class="fas fa-map-marker-alt"></i> Port Blair, Havelock Islands</p>
+    </header>
+
+    <div class="package-detail-layout">
+      <!-- Main Content -->
+      <div class="package-main-content">
+        <div style="margin-bottom: 30px;">
+          <h2>Package Details</h2>
+          <p style="margin: 16px 0; line-height: 1.8;">Are you planning a short 3 Nights and 4 Days Andaman tour? We know that it is really challenging to plan a trip that covers all the must-visit destinations, however finding the perfect vacation becomes simple when you have <strong>Andaman Treek Holidays</strong> as your travel partner. Our expertly crafted itinerary ensures you experience the best of Andaman Islands in just 4 days.</p>
+        </div>
+
+        <!-- Detailed Itinerary -->
+        <div style="margin: 40px 0;">
+          <h2>Detailed Itinerary: 3 Nights 4 Days</h2>
+          
+          <div class="itinerary-day">
+            <h4>Day 1 - Arrival in Port Blair – Cellular Jail, Corbyn's Cove Beach & Light & Sound Show</h4>
+            <p>Your Andaman Tour Package begins as you land at Veer Savarkar International Airport. Our representative will receive you at the airport and provide you with a briefing and transfer you to your hotel. After checking in and freshening up, get ready for your first adventure. Visit the historic Cellular Jail, a symbol of India's freedom struggle, followed by Corbyn's Cove Beach for a relaxing evening. End the day with the captivating Light & Sound Show at Cellular Jail. Overnight stay at the hotel in Port Blair.</p>
+            <ul class="highlights-list">
+              <li>Visit the historic Cellular Jail</li>
+              <li>Spend a relaxing evening at Corbyn's Cove Beach</li>
+              <li>Experience the history with Light & Sound Show</li>
+            </ul>
+          </div>
+
+          <div class="itinerary-day">
+            <h4>Day 2 - Havelock Island - Visit Kalapathar Beach & Radhanagar Beach</h4>
+            <p>After breakfast, proceed to the jetty for your ferry to Havelock Island. Upon arrival, check into your hotel and head to the world-famous Radhanagar Beach, ranked as one of Asia's best beaches. Enjoy the pristine white sand and crystal-clear waters. Later, visit Kalapathar Beach for stunning sunset views. Return to your hotel for an overnight stay.</p>
+            <ul class="highlights-list">
+              <li>Ferry transfer to Havelock Island</li>
+              <li>Visit Radhanagar Beach - Asia's Best Beach</li>
+              <li>Explore Kalapathar Beach</li>
+              <li>Complimentary photoshoot at Radhanagar Beach</li>
+            </ul>
+          </div>
+
+          <div class="itinerary-day">
+            <h4>Day 3 - Elephant Beach Excursion & Return to Port Blair</h4>
+            <p>Start your day with an exciting trip to Elephant Beach, known for its vibrant coral reefs and water sports. Enjoy complimentary snorkeling and witness the colorful marine life. After lunch, take the ferry back to Port Blair. Check into your hotel and relax for the evening.</p>
+            <ul class="highlights-list">
+              <li>Elephant Beach excursion</li>
+              <li>Complimentary snorkeling session</li>
+              <li>Water sports activities (optional)</li>
+              <li>Return ferry to Port Blair</li>
+            </ul>
+          </div>
+
+          <div class="itinerary-day">
+            <h4>Day 4 - Departure from Port Blair</h4>
+            <p>After breakfast, check out from the hotel. Our representative will transfer you to the airport for your onward journey, carrying wonderful memories of your Andaman trip.</p>
+            <ul class="highlights-list">
+              <li>Hotel check-out</li>
+              <li>Airport transfer</li>
+              <li>Departure with beautiful memories</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- What's Included -->
+        <div style="margin: 40px 0;">
+          <h2>What's Included</h2>
+          <ul class="highlights-list" style="margin-top: 16px;">
+            <li>Accommodation in Port Blair & Havelock Island</li>
+            <li>Daily Complimentary Breakfast</li>
+            <li>All sightseeing tours by private AC vehicle at every island as per itinerary</li>
+            <li>All entry tickets, ferry tickets charges included</li>
+            <li>Transfers to Havelock Island by private cruise</li>
+            <li>Dedicated personal tour coordinators as a single point of contact at each island</li>
+            <li>Complimentary Snorkelling at Elephant Beach</li>
+            <li>Complimentary Photoshoot at Radhanagar Beach</li>
+            <li>Meet & Greet assistance at the airport on arrival</li>
+            <li>All Taxes</li>
+          </ul>
+        </div>
+
+        <!-- What's Not Included -->
+        <div style="margin: 40px 0;">
+          <h2>What's Not Included</h2>
+          <ul class="highlights-list" style="margin-top: 16px;">
+            <li>Flight Tickets are not included</li>
+            <li>Meals that are not provided as complimentary</li>
+            <li>Room service and special orders. Alcoholic and non-alcoholic beverages</li>
+            <li>Any sort of personal expenses</li>
+            <li>Adventure activities not mentioned in the itinerary</li>
+            <li>Travel insurance or any other sort of insurance</li>
+            <li>Vehicle not at disposal at any of the islands and will follow the itinerary</li>
+            <li>Any expense arising due to unforeseen circumstances is not included</li>
+            <li>Any charges arising due to flight delay or cancellations</li>
+          </ul>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-users"></i>
+            <h4>50,000+ Travellers</h4>
+            <p>Thousands of guests have trusted us with their Andaman journey.</p>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-calendar"></i>
+            <h4>8+ Years of Experience</h4>
+            <p>Since 2017, we have designed unforgettable Andaman holiday experiences.</p>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-star"></i>
+            <h4>Rating - 4.9/5</h4>
+            <p>Loved by guests, with over 3,200+ Google reviews praising our service and support.</p>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-headset"></i>
+            <h4>24x7 Support</h4>
+            <p>Our team will assist you in every step - before, during and after your trip.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div style="margin: 40px 0;">
+          <h2>Frequently Asked Questions</h2>
+          <div style="margin-top: 20px;">
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">What is the best time to visit Andaman for this package?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">The best time to visit Andaman is from October to May when the weather is pleasant with calm seas and clear skies. This period is ideal for water activities, beach visits, and island hopping. Avoid monsoon season (June to September) as ferry services may be disrupted.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Is this package suitable for families with children?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Yes, absolutely! This 3N/4D package is perfect for families with children. All activities are family-friendly and safe. The beaches have shallow waters suitable for kids, and our tour coordinators ensure special care for families traveling with children.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Are flight tickets included in the package price?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">No, flight tickets to and from Port Blair are not included in the package price. However, we can assist you in booking flights at competitive rates. We recommend booking flights well in advance for better prices and availability.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">What type of accommodation is provided in the Standard package?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">The Standard package includes comfortable 3-star hotels with clean rooms, modern amenities, and complimentary breakfast. All hotels are centrally located near beaches and major attractions. We can upgrade to Deluxe (4-star) hotels upon request.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Is snorkeling equipment provided, and is it safe for beginners?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Yes, complimentary snorkeling equipment (mask, snorkel, life jacket) is provided at Elephant Beach. Our trained guides ensure complete safety for beginners. Life jackets are mandatory, and shallow water areas are designated for first-timers.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Can I customize this package according to my preferences?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Absolutely! We offer complete customization of itineraries. You can add or remove activities, upgrade hotels, extend your stay, or include additional islands. Contact our team at 8900909900 or 9933202248 to discuss your requirements.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">What is the cancellation policy for this package?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Cancellation charges vary based on the time of cancellation: 30+ days before travel - 10% charges, 15-30 days - 25% charges, 7-14 days - 50% charges, less than 7 days - 75% charges. No refund for no-shows. Terms may vary during peak season.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Do I need any special permits to visit Andaman Islands?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Indian citizens do not require any special permits for Port Blair, Havelock, and Neil Island. Foreign nationals need a Restricted Area Permit (RAP) which is issued on arrival at Port Blair airport. All permit charges are included in our package.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Booking Form -->
+      <div class="sticky-booking-form">
+        <div style="margin-bottom: 16px;">
+          <p><strong>Duration:</strong> 3 Nights 4 Days</p>
+          <p><strong>Tour Type:</strong> Family</p>
+        </div>
+
+        <div class="price-display">
+          Starting from<br>
+          <span style="font-size: 32px;">₹15,000.00</span>
+          <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">/ Total Package<br>Excluding applicable taxes*</p>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <h4>Select Your Package</h4>
+          <div class="package-options">
+            <div class="package-option" onclick="openBookingModal('Without Hotels')">
+              <strong>Without Hotels</strong>
+              <p style="font-size: 12px; color: var(--muted); margin: 4px 0 0;">Transfers & Sightseeing Only</p>
+            </div>
+            <div class="package-option" onclick="openBookingModal('Standard')">
+              <strong>Standard</strong>
+              <p style="font-size: 12px; color: var(--muted); margin: 4px 0 0;">3-Star Hotels</p>
+            </div>
+            <div class="package-option" onclick="openBookingModal('Deluxe')">
+              <strong>Deluxe</strong>
+              <p style="font-size: 12px; color: var(--muted); margin: 4px 0 0;">4-Star Hotels</p>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="openBookingModal('Standard')" class="btn-primary" style="width: 100%; padding: 14px; margin-top: 8px;">
+          <i class="fas fa-calendar-check"></i> Book This Package
+        </button>
+
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(16,33,44,0.1);">
+          <p style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Need Help?</p>
+          <p style="font-size: 13px;"><i class="fas fa-phone"></i> Call us: <a href="tel:8900909900">8900909900</a>, <a href="tel:9933202248">9933202248</a></p>
+          <p style="font-size: 13px;"><i class="fas fa-envelope"></i> Mail us: <a href="mailto:info@andamanbliss.com">info@andamanbliss.com</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h4>About Andaman Treek Holidays</h4>
+        <p>We deliver end-to-end Andaman vacation packages with matching hotels, ferries, tours and 24/7 customer support.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="package.html#packages">Packages</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: 8900909900, 9933202248</p>
+        <p>Email: info@andamanbliss.com</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Andaman Treek Holidays. All rights reserved.</div>
+  </footer>
+
+  <a href="https://wa.me/918900909900" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    function openBookingModal(packageType) {
+      const modal = document.createElement('div');
+      modal.className = 'booking-modal show';
+      modal.innerHTML = `
+        <div class="booking-modal-content">
+          <button class="modal-close" onclick="this.closest('.booking-modal').remove()">×</button>
+          <h2>Book 3N/4D Andaman Package</h2>
+          <p class="modal-package-info">Package Type: ${packageType}</p>
+          <form class="modal-booking-form" onsubmit="event.preventDefault(); submitBooking('${packageType}'); this.closest('.booking-modal').remove();">
+            <input type="text" placeholder="Your Name *" required />
+            <input type="email" placeholder="Email Address *" required />
+            <input type="tel" placeholder="Phone Number *" required />
+            <input type="date" id="modalTravelDate" placeholder="Travel Date" min="${new Date().toISOString().split('T')[0]}" required />
+            <div style="padding: 12px; background: rgba(15, 185, 177, 0.1); border-radius: 8px; margin: 8px 0;">
+              <strong>Selected Package:</strong> ${packageType}<br>
+              <span style="font-size: 13px; color: var(--muted);">${getPackageDescription(packageType)}</span>
+            </div>
+            <input type="text" placeholder="Room & Guest (e.g., 2 Adults, 1 Child)" required />
+            <textarea placeholder="Special Requirements (Optional)" rows="3"></textarea>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Submit Booking Request
+            </button>
+            <p style="text-align: center; margin-top: 10px; font-size: 14px;">Need Help? Call us: 8900909900, 9933202248<br>Mail us: info@andamanbliss.com</p>
+          </form>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    function getPackageDescription(packageType) {
+      const descriptions = {
+        'Without Hotels': 'Transfers & Sightseeing Only',
+        'Standard': '3-Star Hotels',
+        'Deluxe': '4-Star Hotels'
+      };
+      return descriptions[packageType] || '';
+    }
+
+    function submitBooking(packageType) {
+      alert(`Thank you for your booking request!\n\nPackage: 3N/4D Andaman Tour\nType: ${packageType}\n\nOur team will contact you shortly at:\n📞 8900909900 or 9933202248\n📧 info@andamanbliss.com`);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

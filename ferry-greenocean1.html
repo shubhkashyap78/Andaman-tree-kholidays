@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Ocean-1 Ferry Booking - Andaman Treek Holidays</title>
+  <meta name="description" content="Book Green Ocean-1 premium ferry with open deck experience. Port Blair to Havelock in 2 hours."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .ferry-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 30px;
+      padding: 40px 8vw;
+      align-items: start;
+    }
+    .ferry-main-content {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .ferry-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .ferry-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .feature-box {
+      text-align: center;
+      padding: 16px;
+      background: rgba(15, 185, 177, 0.05);
+      border-radius: 12px;
+    }
+    .feature-box i {
+      font-size: 28px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .sticky-booking-form {
+      position: sticky;
+      top: 100px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--accent);
+    }
+    .price-display {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 16px 0;
+    }
+    .highlights-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .highlights-list li {
+      padding-left: 24px;
+      position: relative;
+    }
+    .highlights-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    @media (max-width: 1100px) {
+      .ferry-detail-layout {
+        grid-template-columns: 1fr;
+      }
+      .sticky-booking-form {
+        position: static;
+      }
+      .ferry-features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
+      <span>Andaman Treek Holidays</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="package.html#packages">Packages</a></li>
+      <li><a href="index.html#activities">Activities</a></li>
+      <li><a href="index.html#islands">Islands</a></li>
+      <li><a href="index.html#ferry">Ferry</a></li>
+      <li><a href="index.html#hotels">Hotels</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Customize Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero" style="padding: 140px 8vw 60px;">
+      <h1>Green Ocean-1 Ferry</h1>
+      <p style="margin: 10px 0;">Premium High-Speed Ferry with Open Deck Experience</p>
+      <p style="color: rgba(255,255,255,0.8);"><i class="fas fa-ship"></i> Port Blair ↔ Havelock Island</p>
+    </header>
+
+    <div class="ferry-detail-layout">
+      <!-- Main Content -->
+      <div class="ferry-main-content">
+        <img src="images/greenocean1.png" alt="Green Ocean-1 Ferry" class="ferry-image"/>
+        
+        <div style="margin-bottom: 30px;">
+          <h2>About Green Ocean-1</h2>
+          <p style="margin: 16px 0; line-height: 1.8;">Experience luxury travel with Green Ocean-1, our premium high-speed ferry service. Featuring an exclusive open deck, this ferry offers breathtaking views of the Andaman Sea during your journey. With state-of-the-art amenities including air-conditioned seating, complimentary meals, and entertainment systems, Green Ocean-1 ensures a comfortable and memorable voyage between Port Blair and Havelock Island.</p>
+        </div>
+
+        <!-- Features -->
+        <div class="ferry-features">
+          <div class="feature-box">
+            <i class="fas fa-clock"></i>
+            <h4>2 Hours</h4>
+            <p style="font-size: 13px; color: var(--muted);">Journey Time</p>
+          </div>
+          <div class="feature-box">
+            <i class="fas fa-snowflake"></i>
+            <h4>AC Lounge</h4>
+            <p style="font-size: 13px; color: var(--muted);">Climate Control</p>
+          </div>
+          <div class="feature-box">
+            <i class="fas fa-utensils"></i>
+            <h4>Meals</h4>
+            <p style="font-size: 13px; color: var(--muted);">Complimentary</p>
+          </div>
+          <div class="feature-box">
+            <i class="fas fa-couch"></i>
+            <h4>Premium Seats</h4>
+            <p style="font-size: 13px; color: var(--muted);">Comfortable</p>
+          </div>
+          <div class="feature-box">
+            <i class="fas fa-tv"></i>
+            <h4>Entertainment</h4>
+            <p style="font-size: 13px; color: var(--muted);">LCD Screens</p>
+          </div>
+          <div class="feature-box">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Safe Travel</h4>
+            <p style="font-size: 13px; color: var(--muted);">Life Jackets</p>
+          </div>
+        </div>
+
+        <!-- Amenities -->
+        <div style="margin: 40px 0;">
+          <h2>Onboard Amenities</h2>
+          <ul class="highlights-list" style="margin-top: 16px;">
+            <li>Spacious open deck for panoramic sea views</li>
+            <li>Fully air-conditioned premium seating area</li>
+            <li>Complimentary snacks and beverages</li>
+            <li>LCD entertainment screens with movies and music</li>
+            <li>Clean and hygienic washrooms</li>
+            <li>Life jackets and safety equipment for all passengers</li>
+            <li>Luggage storage facility</li>
+            <li>Professional and courteous crew members</li>
+            <li>First aid medical kit onboard</li>
+            <li>Wheelchair accessible facilities</li>
+          </ul>
+        </div>
+
+        <!-- Routes & Timings -->
+        <div style="margin: 40px 0;">
+          <h2>Routes & Timings</h2>
+          <div style="margin-top: 16px; padding: 20px; background: rgba(255, 255, 255, 0.5); border-radius: 12px;">
+            <h4 style="color: var(--accent); margin-bottom: 12px;">Port Blair to Havelock</h4>
+            <p><strong>Departure:</strong> 6:30 AM, 11:00 AM, 2:00 PM</p>
+            <p><strong>Arrival:</strong> 8:30 AM, 1:00 PM, 4:00 PM</p>
+            <p style="margin-top: 12px; font-size: 13px; color: var(--muted);">*Timings subject to weather conditions and availability</p>
+          </div>
+          <div style="margin-top: 16px; padding: 20px; background: rgba(255, 255, 255, 0.5); border-radius: 12px;">
+            <h4 style="color: var(--accent); margin-bottom: 12px;">Havelock to Port Blair</h4>
+            <p><strong>Departure:</strong> 9:00 AM, 12:30 PM, 4:30 PM</p>
+            <p><strong>Arrival:</strong> 11:00 AM, 2:30 PM, 6:30 PM</p>
+            <p style="margin-top: 12px; font-size: 13px; color: var(--muted);">*Timings subject to weather conditions and availability</p>
+          </div>
+        </div>
+
+        <!-- Booking Policy -->
+        <div style="margin: 40px 0;">
+          <h2>Booking Policy</h2>
+          <ul class="highlights-list" style="margin-top: 16px;">
+            <li>Advance booking recommended, especially during peak season</li>
+            <li>Passengers must arrive 30 minutes before departure</li>
+            <li>Valid ID proof required for all passengers</li>
+            <li>Children below 2 years travel free (without seat)</li>
+            <li>Cancellation allowed up to 24 hours before departure</li>
+            <li>Rescheduling subject to availability and charges</li>
+            <li>Luggage limit: 20kg per passenger</li>
+            <li>Pets not allowed onboard</li>
+          </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div style="margin: 40px 0;">
+          <h2>Frequently Asked Questions</h2>
+          <div style="margin-top: 20px;">
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">How long does the ferry journey take?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">The Green Ocean-1 ferry takes approximately 2 hours to travel between Port Blair and Havelock Island. The journey time may vary slightly depending on sea conditions and weather.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">What amenities are available on Green Ocean-1?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Green Ocean-1 offers premium amenities including air-conditioned seating, open deck area, complimentary meals and beverages, LCD entertainment screens, clean washrooms, and comfortable seating arrangements.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Can I cancel or reschedule my ferry booking?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Yes, cancellations are allowed up to 24 hours before departure with applicable charges. Rescheduling is subject to seat availability and may incur additional charges. Please contact us at 8900909900 for assistance.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Is food provided on the ferry?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Yes, complimentary snacks and beverages are provided to all passengers on Green Ocean-1. The meals include light refreshments suitable for the journey duration.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">What documents do I need to board the ferry?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">All passengers must carry a valid government-issued photo ID proof (Aadhaar Card, Passport, Driving License, or Voter ID). Children should carry school ID or birth certificate. Booking confirmation is also required.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">How much luggage can I carry?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Each passenger is allowed up to 20kg of luggage. Excess baggage may be charged separately. Hand luggage should be kept with you, while check-in luggage will be stored in the designated area.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Is the ferry safe during monsoon season?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">Ferry operations are subject to weather conditions. During rough seas or adverse weather, services may be suspended for passenger safety. We recommend traveling between October to May for the best experience. All ferries are equipped with life jackets and safety equipment.</p>
+            </details>
+
+            <details style="margin: 12px 0; padding: 16px; background: rgba(255, 255, 255, 0.5); border-radius: 12px; border-left: 4px solid var(--accent);">
+              <summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: var(--text);">Can I book tickets on the same day of travel?</summary>
+              <p style="margin-top: 12px; color: var(--muted); line-height: 1.6;">While same-day booking is possible subject to availability, we strongly recommend advance booking, especially during peak tourist season (October to March). Advance booking ensures confirmed seats and better pricing.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Booking Form -->
+      <div class="sticky-booking-form">
+        <div style="margin-bottom: 16px;">
+          <h3><i class="fas fa-ship"></i> Book Green Ocean-1</h3>
+          <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">Premium Open Deck Ferry</p>
+        </div>
+
+        <div class="price-display">
+          Starting from<br>
+          <span style="font-size: 32px;">₹1,500</span>
+          <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">/ Per Person<br>*Prices may vary by season</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); submitFerryBooking();" style="display: grid; gap: 12px; margin-top: 20px;">
+          <select required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+            <option value="">Select Route</option>
+            <option>Port Blair to Havelock</option>
+            <option>Havelock to Port Blair</option>
+          </select>
+          <input type="date" id="ferryDate" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+          <select required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+            <option value="">Select Time</option>
+            <option>6:30 AM</option>
+            <option>11:00 AM</option>
+            <option>2:00 PM</option>
+          </select>
+          <input type="number" placeholder="Number of Passengers" min="1" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+          <input type="text" placeholder="Your Name *" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+          <input type="tel" placeholder="Phone Number *" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+          <input type="email" placeholder="Email Address *" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(16,33,44,0.2);">
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 14px; margin-top: 8px;">
+            <i class="fas fa-paper-plane"></i> Book Now
+          </button>
+        </form>
+
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(16,33,44,0.1);">
+          <p style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Need Help?</p>
+          <p style="font-size: 13px;"><i class="fas fa-phone"></i> Call: <a href="tel:8900909900">8900909900</a>, <a href="tel:9933202248">9933202248</a></p>
+          <p style="font-size: 13px;"><i class="fas fa-envelope"></i> Email: <a href="mailto:info@andamanbliss.com">info@andamanbliss.com</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h4>About Andaman Treek Holidays</h4>
+        <p>We deliver end-to-end Andaman vacation packages with matching hotels, ferries, tours and 24/7 customer support.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#ferry">Ferry Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: 8900909900, 9933202248</p>
+        <p>Email: info@andamanbliss.com</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Andaman Treek Holidays. All rights reserved.</div>
+  </footer>
+
+  <a href="https://wa.me/918900909900" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    function submitFerryBooking() {
+      alert('Thank you for your ferry booking request!\n\nFerry: Green Ocean-1\n\nOur team will contact you shortly at:\n📞 8900909900 or 9933202248\n📧 info@andamanbliss.com');
+    }
+    document.getElementById('ferryDate').min = new Date().toISOString().split('T')[0];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

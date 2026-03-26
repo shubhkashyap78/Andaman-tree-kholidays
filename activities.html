@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andaman Treek Holidays - Water Activities</title>
+  <meta name="description" content="All water activities - Scuba Diving, Sea Walk, Kayaking, Parasailing, Island Tours, Dinner Cruise."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo1.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
+      <span>Andaman Treek Holidays</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="package.html#packages">Packages</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="index.html#islands">Islands</a></li>
+      <li><a href="index.html#ferry">Ferry</a></li>
+      <li><a href="index.html#hotels">Hotels</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Customize Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="section-header">
+        <p class="section-tag">Thrilling Experiences</p>
+        <h1>Explore Water Activities in Andaman</h1>
+        <p>Dive into adventure with curated water sports and island activities. From scuba diving to dinner cruises, discover the best aquatic experiences in Andaman Islands.</p>
+      </div>
+    </header>
+
+    <section class="packages" id="activities">
+      <div class="section-header">
+        <p class="section-tag">Our Offerings</p>
+        <h2>Popular <span>Water Activities</span></h2>
+        <p class="section-sub">Thrilling adventures for every kind of explorer</p>
+      </div>
+      <div class="packages-layout">
+        <aside class="packages-filter" aria-label="Activity Filters">
+        <div class="filter-group">
+          <h4>Filter by Price</h4>
+          <input type="range" id="priceRange" min="0" max="10000" step="500" value="10000" aria-label="Maximum price" />
+          <div class="price-values"><span>₹0</span><span id="priceValue">₹10,000</span></div>
+        </div>
+        <div class="filter-group">
+          <h4>Activity Categories</h4>
+          <div class="filter-options">
+            <label><input type="checkbox" class="category-filter" value="Scuba Diving" checked /> Scuba Diving <span>(03)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Sea Walk" checked /> Sea Walk <span>(02)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Kayaking" checked /> Kayaking <span>(02)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Parasailing" checked /> Parasailing <span>(02)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Island Tours" checked /> Island Tours <span>(03)</span></label>
+            <label><input type="checkbox" class="category-filter" value="Dinner Cruise" checked /> Dinner Cruise <span>(01)</span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h4>Location</h4>
+          <div class="filter-options">
+            <label><input type="checkbox" class="duration-filter" value="Port Blair" checked /> Port Blair</label>
+            <label><input type="checkbox" class="duration-filter" value="Havelock" checked /> Havelock Island</label>
+            <label><input type="checkbox" class="duration-filter" value="Neil Island" checked /> Neil Island</label>
+            <label><input type="checkbox" class="duration-filter" value="North Bay" checked /> North Bay</label>
+            <label><input type="checkbox" class="duration-filter" value="Elephant Beach" checked /> Elephant Beach</label>
+          </div>
+        </div>
+        <button type="button" id="clearFilters">Reset Filters</button>
+      </aside>
+      <div class="packages-main">
+        <div id="activitiesCount" class="packages-count">Showing 6 activities</div>
+        <div class="packages-grid" id="activitiesGrid">
+          
+          <!-- Scuba Diving -->
+          <div class="pkg-card" data-category="Scuba Diving" data-price="4500" data-location="Havelock">
+            <div class="pkg-img">
+              <img src="images/scubadiving.jpg" alt="Scuba Diving" loading="lazy" decoding="async"/>
+              <div class="pkg-badge adventure">Adventure</div>
+            </div>
+            <div class="pkg-body">
+              <h3>Scuba Diving</h3>
+              <p>Explore vibrant coral reefs and marine life with certified PADI instructors.</p>
+              <div class="pkg-meta">
+                <span><i class="fas fa-clock"></i> 2-4 Hours</span>
+                <span><i class="fas fa-map-marker-alt"></i> Havelock · Neil · North Bay</span>
+              </div>
+              <div class="pkg-list">
+                <span><i class="fas fa-check"></i> Certified instructors</span>
+                <span><i class="fas fa-check"></i> Full diving gear</span>
+                <span><i class="fas fa-check"></i> Underwater photos</span>
+              </div>
+              <div class="pkg-price">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount">₹4,500</span>
+                <span class="price-unit">per person</span>
+              </div>
+              <a href="scuba-diving.html" class="btn-pkg">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Sea Walk -->
+          <div class="pkg-card" data-category="Sea Walk" data-price="3500" data-location="Elephant Beach">
+            <div class="pkg-img">
+              <img src="images/snorkeling.jpg" alt="Sea Walk" loading="lazy" decoding="async"/>
+              <div class="pkg-badge">Popular</div>
+            </div>
+            <div class="pkg-body">
+              <h3>Sea Walk</h3>
+              <p>Walk on the ocean floor with a special helmet. No swimming skills required.</p>
+              <div class="pkg-meta">
+                <span><i class="fas fa-clock"></i> 30-45 Minutes</span>
+                <span><i class="fas fa-map-marker-alt"></i> Elephant Beach · North Bay</span>
+              </div>
+              <div class="pkg-list">
+                <span><i class="fas fa-check"></i> No swimming needed</span>
+                <span><i class="fas fa-check"></i> Safety equipment</span>
+                <span><i class="fas fa-check"></i> Professional guide</span>
+              </div>
+              <div class="pkg-price">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount">₹3,500</span>
+                <span class="price-unit">per person</span>
+              </div>
+              <a href="sea-walk.html" class="btn-pkg">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Kayaking -->
+          <div class="pkg-card" data-category="Kayaking" data-price="2500" data-location="Havelock">
+            <div class="pkg-img">
+              <img src="images/kayaking.jpg" alt="Kayaking" loading="lazy" decoding="async"/>
+              <div class="pkg-badge hot">Trending</div>
+            </div>
+            <div class="pkg-body">
+              <h3>Kayaking</h3>
+              <p>Paddle through mangrove creeks and experience bioluminescence at night.</p>
+              <div class="pkg-meta">
+                <span><i class="fas fa-clock"></i> 2-3 Hours</span>
+                <span><i class="fas fa-map-marker-alt"></i> Havelock · Mangroves</span>
+              </div>
+              <div class="pkg-list">
+                <span><i class="fas fa-check"></i> Bioluminescence tour</span>
+                <span><i class="fas fa-check"></i> Kayak equipment</span>
+                <span><i class="fas fa-check"></i> Expert guidance</span>
+              </div>
+              <div class="pkg-price">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount">₹2,500</span>
+                <span class="price-unit">per person</span>
+              </div>
+              <a href="kayaking.html" class="btn-pkg">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Parasailing -->
+          <div class="pkg-card" data-category="Parasailing" data-price="3000" data-location="Port Blair">
+            <div class="pkg-img">
+              <img src="images/parasailing1.jpg" alt="Parasailing" loading="lazy" decoding="async"/>
+              <div class="pkg-badge adventure">Thrilling</div>
+            </div>
+            <div class="pkg-body">
+              <h3>Parasailing</h3>
+              <p>Soar high above the ocean and enjoy breathtaking aerial views of islands.</p>
+              <div class="pkg-meta">
+                <span><i class="fas fa-clock"></i> 15-20 Minutes</span>
+                <span><i class="fas fa-map-marker-alt"></i> Port Blair · Havelock</span>
+              </div>
+              <div class="pkg-list">
+                <span><i class="fas fa-check"></i> Safety harness</span>
+                <span><i class="fas fa-check"></i> Trained operators</span>
+                <span><i class="fas fa-check"></i> Aerial photography</span>
+              </div>
+              <div class="pkg-price">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount">₹3,000</span>
+                <span class="price-unit">per person</span>
+              </div>
+              <a href="parasailing.html" class="btn-pkg">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Island Tours -->
+          <div class="pkg-card" data-category="Island Tours" data-price="1500" data-location="Port Blair">
+            <div class="pkg-img">
+              <img src="images/Elephant-beach-2.jpg" alt="Island Tours" loading="lazy" decoding="async"/>
+              <div class="pkg-badge">Sightseeing</div>
+            </div>
+            <div class="pkg-body">
+              <h3>Island Tours</h3>
+              <p>Explore Ross Island, North Bay, and other beautiful islands with guided tours.</p>
+              <div class="pkg-meta">
+                <span><i class="fas fa-clock"></i> 4-6 Hours</span>
+                <span><i class="fas fa-map-marker-alt"></i> Ross · North Bay · Viper</span>
+              </div>
+              <div class="pkg-list">
+                <span><i class="fas fa-check"></i> Ferry transfers</span>
+                <span><i class="fas fa-check"></i> Local guide</span>
+                <span><i class="fas fa-check"></i> Entry tickets</span>
+              </div>
+              <div class="pkg-price">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount">₹1,500</span>
+                <span class="price-unit">per person</span>
+              </div>
+              <a href="island-tours.html" class="btn-pkg">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Dinner Cruise -->
+          <div class="pkg-card" data-category="Dinner Cruise" data-price="2500" data-location="Port Blair">
+            <div class="pkg-img">
+              <img src="images/Dolphin-Andaman.jpg" alt="Dinner Cruise" loading="lazy" decoding="async"/>
+              <div class="pkg-badge">Romantic</div>
+            </div>
+            <div class="pkg-body">
+              <h3>Dinner Cruise</h3>
+              <p>Enjoy a romantic dinner cruise with live music and stunning sunset views.</p>
+              <div class="pkg-meta">
+                <span><i class="fas fa-clock"></i> 2-3 Hours</span>
+                <span><i class="fas fa-map-marker-alt"></i> Port Blair Harbor</span>
+              </div>
+              <div class="pkg-list">
+                <span><i class="fas fa-check"></i> Buffet dinner</span>
+                <span><i class="fas fa-check"></i> Live entertainment</span>
+                <span><i class="fas fa-check"></i> Sunset views</span>
+              </div>
+              <div class="pkg-price">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount">₹2,500</span>
+                <span class="price-unit">per person</span>
+              </div>
+              <a href="dinner-cruise.html" class="btn-pkg">Book Now</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h4>About Andaman Treek Holidays</h4>
+        <p>We deliver end-to-end Andaman vacation packages with matching hotels, ferries, tours and 24/7 customer support.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: 8900909900, 9933202248</p>
+        <p>Email: info@andamanbliss.com</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Andaman Treek Holidays. All rights reserved.</div>
+  </footer>
+
+  <a href="https://wa.me/918900909900" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Simple filter functionality
+    const priceRange = document.getElementById('priceRange');
+    const priceValue = document.getElementById('priceValue');
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const locationFilters = document.querySelectorAll('.duration-filter');
+    const clearFiltersBtn = document.getElementById('clearFilters');
+    const activitiesCount = document.getElementById('activitiesCount');
+    const activityCards = document.querySelectorAll('.pkg-card');
+
+    function updatePriceLabel() {
+      priceValue.textContent = '₹' + parseInt(priceRange.value).toLocaleString('en-IN');
+    }
+
+    function filterActivities() {
+      const maxPrice = parseInt(priceRange.value);
+      const selectedCategories = Array.from(categoryFilters).filter(cb => cb.checked).map(cb => cb.value);
+      const selectedLocations = Array.from(locationFilters).filter(cb => cb.checked).map(cb => cb.value);
+      
+      let visibleCount = 0;
+      
+      activityCards.forEach(card => {
+        const price = parseInt(card.dataset.price);
+        const category = card.dataset.category;
+        const location = card.dataset.location;
+        
+        const matchesPrice = price <= maxPrice;
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(category);
+        const matchesLocation = selectedLocations.length === 0 || selectedLocations.some(loc => location.includes(loc));
+        
+        if (matchesPrice && matchesCategory && matchesLocation) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      activitiesCount.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? 'activity' : 'activities'}`;
+    }
+
+    priceRange.addEventListener('input', () => {
+      updatePriceLabel();
+      filterActivities();
+    });
+
+    categoryFilters.forEach(filter => {
+      filter.addEventListener('change', filterActivities);
+    });
+
+    locationFilters.forEach(filter => {
+      filter.addEventListener('change', filterActivities);
+    });
+
+    clearFiltersBtn.addEventListener('click', () => {
+      priceRange.value = 10000;
+      updatePriceLabel();
+      categoryFilters.forEach(cb => cb.checked = true);
+      locationFilters.forEach(cb => cb.checked = true);
+      filterActivities();
+    });
+
+    // Initialize
+    updatePriceLabel();
+    filterActivities();
+  </script>
+</body>
+</html>
