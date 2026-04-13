@@ -1,0 +1,12 @@
+node_modules
+.env
+*.log
+.DS_Store
+test-connection.js
+create-admin.js
+START.md
+FIX-APPLIED.md
+DEPLOYMENT.md
+README.md
+test.html
+package-backend.json
