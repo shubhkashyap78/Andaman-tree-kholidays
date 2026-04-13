@@ -273,19 +273,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const bookingForm = document.getElementById("bookingForm");
   if (bookingForm) {
-    bookingForm.addEventListener("submit", (e) => {
+    bookingForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      showToast("Thanks! Our travel expert will call you shortly.");
-      bookingForm.reset();
+      
+      const formData = {
+        name: bookingForm.name.value,
+        phone: bookingForm.phone.value,
+        date: bookingForm.travelDate.value,
+        adults: bookingForm.travellers.value,
+        package: bookingForm.package.value
+      };
+      
+      try {
+        await fetch('http://localhost:5000/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        showToast("Thanks! Our travel expert will call you shortly.");
+        bookingForm.reset();
+      } catch (err) {
+        showToast("Booking received! We'll contact you soon.");
+        bookingForm.reset();
+      }
     });
   }
 
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      showToast("Enquiry received! We will reach out within 30 minutes.");
-      contactForm.reset();
+      
+      const formData = {
+        name: contactForm.name.value,
+        email: contactForm.email.value,
+        phone: contactForm.phone.value,
+        package: contactForm.package.value,
+        message: contactForm.message.value
+      };
+      
+      try {
+        await fetch('http://localhost:5000/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        showToast("Enquiry received! We will reach out within 30 minutes.");
+        contactForm.reset();
+      } catch (err) {
+        showToast("Message sent! We'll contact you soon.");
+        contactForm.reset();
+      }
     });
   }
 

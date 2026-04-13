@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Andaman Treek Holidays</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <!-- LOGIN SCREEN -->
+  <div id="loginScreen" class="login-container">
+    <div class="login-box">
+      <img src="images/logo1.png" alt="Logo" class="login-logo">
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p id="loginError" class="error-msg"></p>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div id="adminDashboard" style="display:none;">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="images/logo1.png" alt="Logo">
+        <h3>Admin Panel</h3>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" data-section="dashboard" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="#" data-section="packages" class="nav-link"><i class="fas fa-box"></i> Packages</a>
+        <a href="#" data-section="activities" class="nav-link"><i class="fas fa-swimmer"></i> Activities</a>
+        <a href="#" data-section="testimonials" class="nav-link"><i class="fas fa-star"></i> Testimonials</a>
+        <a href="#" data-section="bookings" class="nav-link"><i class="fas fa-calendar-check"></i> Bookings</a>
+        <a href="#" data-section="contacts" class="nav-link"><i class="fas fa-envelope"></i> Contacts</a>
+        <a href="#" id="logoutBtn" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <h1 id="pageTitle">Dashboard</h1>
+        <div class="admin-info">
+          <span id="adminName">Admin</span>
+        </div>
+      </header>
+
+      <!-- DASHBOARD SECTION -->
+      <section id="dashboardSection" class="content-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class="fas fa-box"></i>
+            <h3 id="statPackages">0</h3>
+            <p>Total Packages</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-swimmer"></i>
+            <h3 id="statActivities">0</h3>
+            <p>Total Activities</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-calendar-check"></i>
+            <h3 id="statBookings">0</h3>
+            <p>Total Bookings</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-clock"></i>
+            <h3 id="statPending">0</h3>
+            <p>Pending Bookings</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-envelope"></i>
+            <h3 id="statContacts">0</h3>
+            <p>Total Contacts</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-bell"></i>
+            <h3 id="statNewContacts">0</h3>
+            <p>New Contacts</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES SECTION -->
+      <section id="packagesSection" class="content-section" style="display:none;">
+        <button class="btn-primary" onclick="showAddPackageModal()"><i class="fas fa-plus"></i> Add Package</button>
+        <div class="table-container">
+          <table id="packagesTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ACTIVITIES SECTION -->
+      <section id="activitiesSection" class="content-section" style="display:none;">
+        <button class="btn-primary" onclick="showAddActivityModal()"><i class="fas fa-plus"></i> Add Activity</button>
+        <div class="table-container">
+          <table id="activitiesTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section id="testimonialsSection" class="content-section" style="display:none;">
+        <button class="btn-primary" onclick="showAddTestimonialModal()"><i class="fas fa-plus"></i> Add Testimonial</button>
+        <div class="table-container">
+          <table id="testimonialsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Review</th>
+                <th>Rating</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- BOOKINGS SECTION -->
+      <section id="bookingsSection" class="content-section" style="display:none;">
+        <div class="table-container">
+          <table id="bookingsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Package/Activity</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CONTACTS SECTION -->
+      <section id="contactsSection" class="content-section" style="display:none;">
+        <div class="table-container">
+          <table id="contactsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Package</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODALS -->
+  <div id="packageModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('packageModal')">&times;</span>
+      <h2 id="packageModalTitle">Add Package</h2>
+      <form id="packageForm">
+        <input type="hidden" id="packageId">
+        <input type="text" id="packageName" placeholder="Package Name" required>
+        <input type="text" id="packageDuration" placeholder="Duration (e.g., 5N/6D)" required>
+        <input type="number" id="packagePrice" placeholder="Price" required>
+        <input type="text" id="packageImage" placeholder="Image URL" required>
+        <textarea id="packageDescription" placeholder="Description" required></textarea>
+        <input type="text" id="packageFeatures" placeholder="Features (comma separated)">
+        <label><input type="checkbox" id="packageActive" checked> Active</label>
+        <button type="submit" class="btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="activityModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('activityModal')">&times;</span>
+      <h2 id="activityModalTitle">Add Activity</h2>
+      <form id="activityForm">
+        <input type="hidden" id="activityId">
+        <input type="text" id="activityName" placeholder="Activity Name" required>
+        <input type="number" id="activityPrice" placeholder="Price" required>
+        <input type="text" id="activityImage" placeholder="Image URL" required>
+        <input type="text" id="activityIcon" placeholder="Icon Class (e.g., fa-swimmer)">
+        <textarea id="activityDescription" placeholder="Description" required></textarea>
+        <label><input type="checkbox" id="activityActive" checked> Active</label>
+        <button type="submit" class="btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="testimonialModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('testimonialModal')">&times;</span>
+      <h2 id="testimonialModalTitle">Add Testimonial</h2>
+      <form id="testimonialForm">
+        <input type="hidden" id="testimonialId">
+        <input type="text" id="testimonialName" placeholder="Customer Name" required>
+        <input type="text" id="testimonialInitials" placeholder="Initials (e.g., SK)" required>
+        <textarea id="testimonialReview" placeholder="Review" required></textarea>
+        <input type="number" id="testimonialRating" placeholder="Rating (1-5)" min="1" max="5" value="5" required>
+        <input type="text" id="testimonialDate" placeholder="Review Date (e.g., Dec 2026)" required>
+        <label><input type="checkbox" id="testimonialActive" checked> Active</label>
+        <button type="submit" class="btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin-script.js"></script>
+</body>
+</html>

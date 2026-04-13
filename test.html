@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Test</title>
+</head>
+<body>
+    <h1>✅ Server is Running!</h1>
+    <p>If you see this, server is working fine.</p>
+    <ul>
+        <li><a href="/admin.html">Go to Admin Panel</a></li>
+        <li><a href="/index.html">Go to Main Website</a></li>
+    </ul>
+    <script>
+        fetch('/api/admin/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username: 'test', password: 'test'})
+        })
+        .then(res => res.json())
+        .then(data => console.log('API Test:', data))
+        .catch(err => console.log('API Error:', err));
+    </script>
+</body>
+</html>
