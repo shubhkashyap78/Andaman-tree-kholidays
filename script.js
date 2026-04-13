@@ -277,11 +277,11 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       
       const formData = {
-        name: bookingForm.name.value,
-        phone: bookingForm.phone.value,
-        date: bookingForm.travelDate.value,
-        adults: bookingForm.travellers.value,
-        package: bookingForm.package.value
+        name: document.getElementById('bookingName').value,
+        phone: document.getElementById('bookingPhone').value,
+        date: document.getElementById('bookingDate').value,
+        adults: document.getElementById('bookingTravellers').value,
+        package: document.getElementById('bookingPackage').value
       };
       
       try {
