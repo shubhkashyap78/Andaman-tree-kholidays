@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       
       try {
-        await fetch('http://localhost:5000/api/bookings', {
+        await fetch(window.location.hostname === 'localhost' ? 'http://localhost:5000/api/bookings' : 'https://andaman-tree-kholidays.vercel.app/api/bookings', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       
       try {
-        await fetch('http://localhost:5000/api/contact', {
+        await fetch(window.location.hostname === 'localhost' ? 'http://localhost:5000/api/contact' : 'https://andaman-tree-kholidays.vercel.app/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
