@@ -11,6 +11,7 @@
   <meta property="og:description" content="Premium Andaman tour packages, island transfers, hotels and curated adventures."/>
   <meta property="og:type" content="website"/>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="footer-modern.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -744,47 +745,127 @@
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="images/logo1.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
-          <h3>Andaman Treek Holidays</h3>
-          <p>Your trusted travel partner for the most beautiful islands of India.</p>
+    <!-- ===== MODERN FOOTER ===== -->
+    <footer class="modern-footer">
+      <!-- Wave Animation -->
+      <div class="footer-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="wave-path"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="wave-path"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="wave-path"></path>
+        </svg>
+      </div>
+
+      <div class="footer-content-wrapper">
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+          <div class="newsletter-content">
+            <div class="newsletter-icon">
+              <i class="fas fa-paper-plane"></i>
+            </div>
+            <div>
+              <h3>Subscribe to Our Newsletter</h3>
+              <p>Get exclusive deals, travel tips, and island updates delivered to your inbox!</p>
+            </div>
+          </div>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input type="email" placeholder="Enter your email address" required />
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#islands">Islands</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+          <!-- Brand Column -->
+          <div class="footer-col footer-brand-col">
+            <div class="footer-logo">
+              <img src="images/logo1.png" alt="Andaman Treek Holidays" />
+              <h3>Andaman Treek Holidays</h3>
+            </div>
+            <p class="footer-desc">Your trusted travel partner for unforgettable Andaman experiences. We craft personalized island adventures with 24/7 support and local expertise.</p>
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="#packages"><i class="fas fa-chevron-right"></i> Tour Packages</a></li>
+              <li><a href="#activities"><i class="fas fa-chevron-right"></i> Activities</a></li>
+              <li><a href="#islands"><i class="fas fa-chevron-right"></i> Islands</a></li>
+              <li><a href="#ferry"><i class="fas fa-chevron-right"></i> Ferry Booking</a></li>
+              <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Popular Packages -->
+          <div class="footer-col">
+            <h4>Popular Packages</h4>
+            <ul class="footer-links">
+              <li><a href="package.html"><i class="fas fa-chevron-right"></i> Honeymoon Packages</a></li>
+              <li><a href="package.html"><i class="fas fa-chevron-right"></i> Family Packages</a></li>
+              <li><a href="package.html"><i class="fas fa-chevron-right"></i> Group Tours</a></li>
+              <li><a href="package.html"><i class="fas fa-chevron-right"></i> LTC Packages</a></li>
+              <li><a href="package.html"><i class="fas fa-chevron-right"></i> Adventure Tours</a></li>
+              <li><a href="package.html"><i class="fas fa-chevron-right"></i> Luxury Escapes</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-col">
+            <h4>Get In Touch</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Port Blair, Andaman & Nicobar Islands, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>
+                  <a href="tel:+918900909900">+91 8900909900</a><br>
+                  <a href="tel:+919933202248">+91 9933202248</a>
+                </span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span><a href="mailto:info@andamantreekholiday.com">info@andamantreekholiday.com</a></span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>24/7 Customer Support</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-links">
-          <h4>Experiences</h4>
-          <ul>
-            <li><a href="#activities">Scuba Diving</a></li>
-            <li><a href="#activities">Sea Walk</a></li>
-            <li><a href="#activities">Dinner Cruise</a></li>
-            <li><a href="#ferry">Ferry Booking</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-          <p><i class="fas fa-envelope"></i> info@andamantripholidays.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Port Blair, A&N Islands</p>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>&copy; 2026 Andaman Treek Holidays. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> by <strong>JR Technology</strong></p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <span>•</span>
+              <a href="#">Terms & Conditions</a>
+              <span>•</span>
+              <a href="#">Cancellation Policy</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 Andaman Treek Holidays. All Rights Reserved. | Designed with love by JR Technology</p>
-        <div class="policy-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cancellation</a>
-        </div>
+
+      <!-- Floating Elements -->
+      <div class="footer-float-elements">
+        <div class="float-element" style="top: 10%; left: 5%;"><i class="fas fa-umbrella-beach"></i></div>
+        <div class="float-element" style="top: 30%; right: 10%;"><i class="fas fa-ship"></i></div>
+        <div class="float-element" style="bottom: 20%; left: 15%;"><i class="fas fa-water"></i></div>
+        <div class="float-element" style="bottom: 40%; right: 5%;"><i class="fas fa-sun"></i></div>
       </div>
     </footer>
 
