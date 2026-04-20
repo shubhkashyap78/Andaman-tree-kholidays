@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 
 const packageSchema = new mongoose.Schema({
   name: { type: String, required: true },
+  category: { type: String, enum: ['Honeymoon', 'Family', 'Best Seller', 'Adventure', 'LTC', 'Group', 'Student'], default: 'Family' },
   duration: { type: String, required: true },
   price: { type: Number, required: true },
   description: { type: String, required: true },
+  route: { type: String },
   image: { type: String, required: true },
   features: [String],
   isActive: { type: Boolean, default: true }

@@ -328,7 +328,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===== Package data + filter logic =====
-  const packagesData = [
+  let packagesData = [];
+  
+  // Fetch packages from API
+  const fetchPackagesFromAPI = async () => {
+    try {
+      const API_URL = window.location.hostname === 'localhost' 
+        ? 'http://localhost:5000/api' 
+        : 'https://andaman-tree-kholidays.vercel.app/api';
+      
+      const res = await fetch(`${API_URL}/packages`);
+      const apiPackages = await res.json();
+      
+      // Transform API data to match frontend format
+      packagesData = apiPackages.map(pkg => ({
+        id: pkg._id,
+        category: pkg.category || 'Family',
+        duration: pkg.duration,
+        price: pkg.price,
+        title: pkg.name,
+        image: pkg.image,
+        route: pkg.route || pkg.description.substring(0, 50),
+        details: pkg.features || []
+      }));
+      
+      return packagesData;
+    } catch (err) {
+      console.error('Error fetching packages:', err);
+      // Fallback to static data if API fails
+      return getStaticPackages();
+    }
+  };
+  
+  // Static fallback data
+  const getStaticPackages = () => [
     { id: "honey-34", category: "Honeymoon", duration: "3 Nights 4 Days", price: 15000, title: "Romantic Honeymoon Escape", image: "images/Honeymoon1.jpeg", route: "1N Port Blair · 1N Havelock · 1N Port Blair", details: ["Complimentary breakfast", "Private transfers", "Candlelight dinner", "Radhanagar Beach visit"] },
     { id: "honey-45", category: "Honeymoon", duration: "4 Nights 5 Days", price: 22000, title: "Premium Honeymoon Package", image: "images/Honeymoon2.jpeg", route: "2N Port Blair · 1N Havelock · 1N Neil Island", details: ["Romantic photoshoot", "Sunset cruise", "Couple spa session", "Island hopping tours"] },
     { id: "honey-56", category: "Honeymoon", duration: "5 Nights 6 Days", price: 32000, title: "Luxury Honeymoon Experience", image: "images/Honeymoon3.jpeg", route: "2N Port Blair · 2N Havelock · 1N Neil Island", details: ["Beach cottage stay", "Private yacht tour", "Scuba diving session", "All meals included"] },
@@ -428,12 +461,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="pkg-list">
             ${pkg.details.map((d) => `<span><i class="fas fa-check"></i> ${d}</span>`).join("")}
           </div>
-          <button class="btn-pkg" data-pkg-id="${pkg.id}">Book Now</button>
+          <a href="package-detail.html?id=${pkg.id}" class="btn-pkg">View Details</a>
         </div>
       `;
-
-      const bookBtn = card.querySelector('.btn-pkg');
-      bookBtn.addEventListener('click', () => openBookingModal(pkg));
 
       packagesGrid.appendChild(card);
     });
@@ -480,7 +510,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const initializePackages = () => {
+  const initializePackages = async () => {
+    // Fetch packages from API first
+    await fetchPackagesFromAPI();
+    
     const selectedCategory = sessionStorage.getItem('selectedCategory');
     
     if (selectedCategory) {

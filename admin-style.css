@@ -317,3 +317,159 @@ td {
   margin-bottom: 15px;
   color: #2c3e50;
 }
+
+/* PACKAGES GRID */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.package-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.package-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.package-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.package-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge-inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.package-card-body {
+  padding: 20px;
+}
+
+.package-card-body h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.package-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #7f8c8d;
+}
+
+.package-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.package-route {
+  font-size: 13px;
+  color: #95a5a6;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.package-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 12px;
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.package-features span {
+  font-size: 12px;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.package-features i {
+  color: #27ae60;
+  font-size: 10px;
+}
+
+.package-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.package-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.package-actions .btn-view {
+  background: #27ae60;
+  color: white;
+}
+
+.package-actions .btn-view:hover {
+  background: #229954;
+}
+
+.package-actions .btn-edit {
+  background: #3498db;
+  color: white;
+}
+
+.package-actions .btn-edit:hover {
+  background: #2980b9;
+}
+
+.package-actions .btn-delete {
+  background: #e74c3c;
+  color: white;
+}
+
+.package-actions .btn-delete:hover {
+  background: #c0392b;
+}

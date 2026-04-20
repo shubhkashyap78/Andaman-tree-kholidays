@@ -60,6 +60,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.add('active');
     
     const section = link.dataset.section;
+    const category = link.dataset.category;
     document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
     document.getElementById(`${section}Section`).style.display = 'block';
     
@@ -67,6 +68,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     
     if (section === 'dashboard') loadDashboardStats();
     else if (section === 'packages') loadPackages();
+    else if (category) loadPackagesByCategory(category, `${section}Grid`);
     else if (section === 'activities') loadActivities();
     else if (section === 'testimonials') loadTestimonials();
     else if (section === 'bookings') loadBookings();
@@ -100,29 +102,63 @@ async function loadPackages() {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
     const packages = await res.json();
-    
-    const tbody = document.querySelector('#packagesTable tbody');
-    tbody.innerHTML = packages.map(pkg => `
-      <tr>
-        <td>${pkg.name}</td>
-        <td>${pkg.duration}</td>
-        <td>₹${pkg.price}</td>
-        <td><span class="status-badge status-${pkg.isActive ? 'active' : 'inactive'}">${pkg.isActive ? 'Active' : 'Inactive'}</span></td>
-        <td>
-          <button class="btn-edit" onclick="editPackage('${pkg._id}')">Edit</button>
-          <button class="btn-delete" onclick="deletePackage('${pkg._id}')">Delete</button>
-        </td>
-      </tr>
-    `).join('');
+    renderPackages(packages, 'packagesGrid');
   } catch (err) {
     console.error('Error loading packages:', err);
   }
 }
 
-function showAddPackageModal() {
+async function loadPackagesByCategory(category, gridId) {
+  try {
+    const res = await fetch(`${API_URL}/admin/packages`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const packages = await res.json();
+    const filtered = packages.filter(pkg => pkg.category === category);
+    renderPackages(filtered, gridId);
+  } catch (err) {
+    console.error('Error loading packages:', err);
+  }
+}
+
+function renderPackages(packages, gridId) {
+  const container = document.getElementById(gridId);
+  container.innerHTML = packages.map(pkg => `
+    <div class="package-card">
+      <div class="package-card-image">
+        <img src="${pkg.image}" alt="${pkg.name}" onerror="this.src='images/andaman1.jpg'">
+        <span class="package-badge ${pkg.isActive ? 'badge-active' : 'badge-inactive'}">
+          ${pkg.isActive ? 'Active' : 'Inactive'}
+        </span>
+      </div>
+      <div class="package-card-body">
+        <h3>${pkg.name}</h3>
+        <div class="package-meta">
+          <span><i class="fas fa-tag"></i> ${pkg.category || 'Family'}</span>
+          <span><i class="fas fa-clock"></i> ${pkg.duration}</span>
+        </div>
+        <p class="package-route">${pkg.route || pkg.description.substring(0, 60) + '...'}</p>
+        <div class="package-price">₹${pkg.price.toLocaleString('en-IN')}</div>
+        <div class="package-features">
+          ${pkg.features?.slice(0, 3).map(f => `<span><i class="fas fa-check"></i> ${f}</span>`).join('') || ''}
+        </div>
+        <div class="package-actions">
+          <button class="btn-view" onclick="window.open('package-detail.html?id=${pkg._id}', '_blank')" title="View Package"><i class="fas fa-eye"></i> View</button>
+          <button class="btn-edit" onclick="editPackage('${pkg._id}')"><i class="fas fa-edit"></i> Edit</button>
+          <button class="btn-delete" onclick="deletePackage('${pkg._id}')"><i class="fas fa-trash"></i> Delete</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function showAddPackageModal(category = '') {
   document.getElementById('packageModalTitle').textContent = 'Add Package';
   document.getElementById('packageForm').reset();
   document.getElementById('packageId').value = '';
+  if (category) {
+    document.getElementById('packageCategory').value = category;
+  }
   document.getElementById('packageModal').style.display = 'block';
 }
 
@@ -137,8 +173,10 @@ async function editPackage(id) {
     document.getElementById('packageModalTitle').textContent = 'Edit Package';
     document.getElementById('packageId').value = pkg._id;
     document.getElementById('packageName').value = pkg.name;
+    document.getElementById('packageCategory').value = pkg.category || 'Family';
     document.getElementById('packageDuration').value = pkg.duration;
     document.getElementById('packagePrice').value = pkg.price;
+    document.getElementById('packageRoute').value = pkg.route || '';
     document.getElementById('packageImage').value = pkg.image;
     document.getElementById('packageDescription').value = pkg.description;
     document.getElementById('packageFeatures').value = pkg.features?.join(', ') || '';
@@ -155,8 +193,10 @@ document.getElementById('packageForm')?.addEventListener('submit', async (e) => 
   const id = document.getElementById('packageId').value;
   const data = {
     name: document.getElementById('packageName').value,
+    category: document.getElementById('packageCategory').value,
     duration: document.getElementById('packageDuration').value,
     price: document.getElementById('packagePrice').value,
+    route: document.getElementById('packageRoute').value,
     image: document.getElementById('packageImage').value,
     description: document.getElementById('packageDescription').value,
     features: document.getElementById('packageFeatures').value.split(',').map(f => f.trim()),

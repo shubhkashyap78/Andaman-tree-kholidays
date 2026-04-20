@@ -42,7 +42,11 @@ Main website: http://localhost:5000/index.html
 
 ### Admin Panel
 - Dashboard with statistics
-- Manage Packages (Add/Edit/Delete)
+- Manage All Packages (Add/Edit/Delete)
+- Manage Honeymoon Packages (Category-wise view)
+- Manage Family Packages (Category-wise view)
+- Manage Group Packages (Category-wise view)
+- Manage LTC Packages (Category-wise view)
 - Manage Activities (Add/Edit/Delete)
 - Manage Testimonials (Add/Edit/Delete)
 - View Bookings

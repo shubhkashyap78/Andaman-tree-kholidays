@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="pageTitle">Package Details - Andaman Treek Holidays</title>
+  <meta name="description" id="pageDesc" content="Book your Andaman tour package with Andaman Treek Holidays"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .package-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 30px;
+      padding: 40px 8vw;
+      align-items: start;
+    }
+    .package-main-content {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .sticky-booking-form {
+      position: sticky;
+      top: 100px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--accent);
+    }
+    .price-display {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 16px 0;
+    }
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 30px 0;
+    }
+    .trust-badge {
+      text-align: center;
+      padding: 16px;
+      background: rgba(15, 185, 177, 0.05);
+      border-radius: 12px;
+    }
+    .trust-badge i {
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .trust-badge h4 {
+      font-size: 20px;
+      margin: 8px 0 4px;
+    }
+    .trust-badge p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .features-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .features-list li {
+      padding-left: 24px;
+      position: relative;
+    }
+    .features-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    @media (max-width: 1100px) {
+      .package-detail-layout {
+        grid-template-columns: 1fr;
+      }
+      .sticky-booking-form {
+        position: static;
+      }
+    }
+    .loading {
+      text-align: center;
+      padding: 100px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo1.png" alt="Andaman Treek Holidays logo" loading="lazy" decoding="async"/>
+      <span>Andaman Treek Holidays</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="package.html#packages">Packages</a></li>
+      <li><a href="index.html#activities">Activities</a></li>
+      <li><a href="index.html#islands">Islands</a></li>
+      <li><a href="index.html#ferry">Ferry</a></li>
+      <li><a href="index.html#hotels">Hotels</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Customize Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <main id="main">
+    <div id="loadingDiv" class="loading">
+      <i class="fas fa-spinner fa-spin" style="font-size: 40px; color: var(--accent);"></i>
+      <p>Loading package details...</p>
+    </div>
+
+    <div id="packageContent" style="display: none;">
+      <header class="page-hero" style="padding: 140px 8vw 60px;">
+        <h1 id="heroTitle">Package Details</h1>
+        <p id="heroRoute" style="margin: 10px 0;"></p>
+        <p id="heroCategory" style="color: rgba(255,255,255,0.8);"></p>
+      </header>
+
+      <div class="package-detail-layout">
+        <!-- Main Content -->
+        <div class="package-main-content">
+          <div style="margin-bottom: 30px;">
+            <h2>Package Details</h2>
+            <p id="packageDescription" style="margin: 16px 0; line-height: 1.8;"></p>
+          </div>
+
+          <!-- Features -->
+          <div style="margin: 40px 0;">
+            <h2>Package Highlights</h2>
+            <ul id="featuresList" class="features-list" style="margin-top: 16px;"></ul>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <i class="fas fa-users"></i>
+              <h4>50,000+ Travellers</h4>
+              <p>Thousands of guests have trusted us with their Andaman journey.</p>
+            </div>
+            <div class="trust-badge">
+              <i class="fas fa-calendar"></i>
+              <h4>8+ Years of Experience</h4>
+              <p>Since 2017, we have designed unforgettable Andaman holiday experiences.</p>
+            </div>
+            <div class="trust-badge">
+              <i class="fas fa-star"></i>
+              <h4>Rating - 4.9/5</h4>
+              <p>Loved by guests, with over 3,200+ Google reviews praising our service and support.</p>
+            </div>
+            <div class="trust-badge">
+              <i class="fas fa-headset"></i>
+              <h4>24x7 Support</h4>
+              <p>Our team will assist you in every step - before, during and after your trip.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Booking Form -->
+        <div class="sticky-booking-form">
+          <div style="margin-bottom: 16px;">
+            <p><strong>Duration:</strong> <span id="formDuration"></span></p>
+            <p><strong>Tour Type:</strong> <span id="formCategory"></span></p>
+          </div>
+
+          <div class="price-display">
+            Starting from<br>
+            <span id="formPrice" style="font-size: 32px;">₹0</span>
+            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">/ Total Package<br>Excluding applicable taxes*</p>
+          </div>
+
+          <button onclick="openBookingModal()" class="btn-primary" style="width: 100%; padding: 14px; margin-top: 8px;">
+            <i class="fas fa-calendar-check"></i> Book This Package
+          </button>
+
+          <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(16,33,44,0.1);">
+            <p style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Need Help?</p>
+            <p style="font-size: 13px;"><i class="fas fa-phone"></i> Call us: <a href="tel:8900909900">8900909900</a>, <a href="tel:9933202248">9933202248</a></p>
+            <p style="font-size: 13px;"><i class="fas fa-envelope"></i> Mail us: <a href="mailto:info@andamanbliss.com">info@andamanbliss.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h4>About Andaman Treek Holidays</h4>
+        <p>We deliver end-to-end Andaman vacation packages with matching hotels, ferries, tours and 24/7 customer support.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="package.html#packages">Packages</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: 8900909900, 9933202248</p>
+        <p>Email: info@andamanbliss.com</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Andaman Treek Holidays. All rights reserved.</div>
+  </footer>
+
+  <a href="https://wa.me/918900909900" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    const API_URL = window.location.hostname === 'localhost' 
+      ? 'http://localhost:5000/api' 
+      : 'https://andaman-tree-kholidays.vercel.app/api';
+
+    let currentPackage = null;
+
+    // Get package ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const packageId = urlParams.get('id');
+    const packageName = urlParams.get('name');
+
+    async function loadPackage() {
+      try {
+        const res = await fetch(`${API_URL}/packages`);
+        const packages = await res.json();
+        
+        // Find package by ID or name
+        let pkg = null;
+        if (packageId) {
+          pkg = packages.find(p => p._id === packageId);
+        } else if (packageName) {
+          pkg = packages.find(p => p.name.toLowerCase().includes(packageName.toLowerCase()));
+        }
+
+        if (!pkg) {
+          document.getElementById('loadingDiv').innerHTML = '<p>Package not found!</p>';
+          return;
+        }
+
+        currentPackage = pkg;
+        displayPackage(pkg);
+      } catch (err) {
+        console.error('Error loading package:', err);
+        document.getElementById('loadingDiv').innerHTML = '<p>Error loading package. Please try again.</p>';
+      }
+    }
+
+    function displayPackage(pkg) {
+      // Update page title and meta
+      document.getElementById('pageTitle').textContent = `${pkg.name} - Andaman Treek Holidays`;
+      document.getElementById('pageDesc').content = pkg.description;
+
+      // Update hero section
+      document.getElementById('heroTitle').textContent = pkg.name;
+      document.getElementById('heroRoute').textContent = `• ${pkg.route || pkg.duration}`;
+      document.getElementById('heroCategory').innerHTML = `<i class="fas fa-tag"></i> ${pkg.category}`;
+
+      // Update content
+      document.getElementById('packageDescription').textContent = pkg.description;
+
+      // Update features
+      const featuresList = document.getElementById('featuresList');
+      featuresList.innerHTML = pkg.features?.map(f => `<li>${f}</li>`).join('') || '<li>Contact us for details</li>';
+
+      // Update booking form
+      document.getElementById('formDuration').textContent = pkg.duration;
+      document.getElementById('formCategory').textContent = pkg.category;
+      document.getElementById('formPrice').textContent = `₹${pkg.price.toLocaleString('en-IN')}`;
+
+      // Show content, hide loading
+      document.getElementById('loadingDiv').style.display = 'none';
+      document.getElementById('packageContent').style.display = 'block';
+    }
+
+    function openBookingModal() {
+      if (!currentPackage) return;
+
+      const modal = document.createElement('div');
+      modal.className = 'booking-modal show';
+      modal.innerHTML = `
+        <div class="booking-modal-content">
+          <button class="modal-close" onclick="this.closest('.booking-modal').remove()">×</button>
+          <h2>Book ${currentPackage.name}</h2>
+          <form class="modal-booking-form" onsubmit="event.preventDefault(); submitBooking(); this.closest('.booking-modal').remove();">
+            <input type="text" placeholder="Your Name *" required />
+            <input type="email" placeholder="Email Address *" required />
+            <input type="tel" placeholder="Phone Number *" required />
+            <input type="date" placeholder="Travel Date" min="${new Date().toISOString().split('T')[0]}" required />
+            <div style="padding: 12px; background: rgba(15, 185, 177, 0.1); border-radius: 8px; margin: 8px 0;">
+              <strong>Package:</strong> ${currentPackage.name}<br>
+              <strong>Price:</strong> ₹${currentPackage.price.toLocaleString('en-IN')}<br>
+              <span style="font-size: 13px; color: var(--muted);">${currentPackage.duration} · ${currentPackage.category}</span>
+            </div>
+            <input type="text" placeholder="Number of Guests (e.g., 2 Adults, 1 Child)" required />
+            <textarea placeholder="Special Requirements (Optional)" rows="3"></textarea>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Submit Booking Request
+            </button>
+            <p style="text-align: center; margin-top: 10px; font-size: 14px;">Need Help? Call us: 8900909900, 9933202248<br>Mail us: info@andamanbliss.com</p>
+          </form>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    function submitBooking() {
+      alert(`Thank you for your booking request!\\n\\nPackage: ${currentPackage.name}\\nPrice: ₹${currentPackage.price.toLocaleString('en-IN')}\\n\\nOur team will contact you shortly at:\\n📞 8900909900 or 9933202248\\n📧 info@andamanbliss.com`);
+    }
+
+    // Load package on page load
+    if (packageId || packageName) {
+      loadPackage();
+    } else {
+      document.getElementById('loadingDiv').innerHTML = '<p>No package specified. <a href="package.html">View all packages</a></p>';
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
