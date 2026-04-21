@@ -104,15 +104,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Mobile submenu toggle
   document.querySelectorAll(".sub-toggle").forEach((toggle) => {
     toggle.addEventListener("click", (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const parent = toggle.closest(".has-sub");
       if (!parent) return;
+      
+      // Close other open submenus
+      document.querySelectorAll(".has-sub.open").forEach(item => {
+        if (item !== parent) {
+          item.classList.remove("open");
+          const otherToggle = item.querySelector(".sub-toggle");
+          if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+      
       const isOpen = parent.classList.toggle("open");
       toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
   });
+  
+  // Mobile: Also allow clicking on the parent link to toggle
+  if (window.innerWidth <= 1200) {
+    document.querySelectorAll(".has-sub > a").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const parent = link.closest(".has-sub");
+        if (!parent) return;
+        
+        // If submenu exists, prevent default and toggle
+        const subMenu = parent.querySelector(".sub-menu");
+        if (subMenu) {
+          e.preventDefault();
+          const toggle = parent.querySelector(".sub-toggle");
+          if (toggle) toggle.click();
+        }
+      });
+    });
+  }
 
   const revealTargets = Array.from(
     document.querySelectorAll(
@@ -285,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       
       try {
-        await fetch(window.location.hostname === 'localhost' ? 'http://localhost:5000/api/bookings' : 'https://andaman-tree-kholidays.vercel.app/api/bookings', {
+        await fetch(window.location.hostname === 'localhost' ? 'http://localhost:5000/api/bookings' : window.location.origin + '/api/bookings', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -313,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       
       try {
-        await fetch(window.location.hostname === 'localhost' ? 'http://localhost:5000/api/contact' : 'https://andaman-tree-kholidays.vercel.app/api/contact', {
+        await fetch(window.location.hostname === 'localhost' ? 'http://localhost:5000/api/contact' : window.location.origin + '/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)

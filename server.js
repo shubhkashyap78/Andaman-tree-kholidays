@@ -8,7 +8,12 @@ const { Package, Activity, Testimonial, Booking, Contact, Admin } = require('./m
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 app.use(express.static(__dirname));
 app.use('/images', express.static('images'));

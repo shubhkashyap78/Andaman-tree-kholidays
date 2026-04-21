@@ -1,6 +1,6 @@
 const API_URL = window.location.hostname === 'localhost' 
   ? 'http://localhost:5000/api' 
-  : 'https://andaman-tree-kholidays.vercel.app/api';
+  : window.location.origin + '/api';
 let authToken = localStorage.getItem('adminToken');
 
 // LOGIN
