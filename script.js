@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const API_URL = window.location.hostname === 'localhost' 
         ? 'http://localhost:5000/api' 
-        : 'https://andaman-tree-kholidays.vercel.app/api';
+        : window.location.origin + '/api';
       
       const res = await fetch(`${API_URL}/packages`);
       const apiPackages = await res.json();
